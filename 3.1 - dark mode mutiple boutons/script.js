@@ -1,6 +1,10 @@
+const switchButton_elem = document.querySelectorAll(".switch");
+const all_elem = document.querySelectorAll("*");
 
-//1. Je recupere tout les switchs
-
-//2. Je recupere tout les elements html de ma page
-
-//3. Je parcours tout les switchs
+switchButton_elem.forEach((switchButton)=>{
+    switchButton.onclick = function(){
+        all_elem.forEach((all)=> {
+            all.classList.toggle("darkmode");
+        })
+    }
+})
