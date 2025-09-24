@@ -48,6 +48,7 @@ Banniere cookies
     border:none;
     padding:1rem;
     border-radius: 1rem;
+    opacity: 1;
     transition: transform 0.1s;
 }
 .btn:active{
@@ -58,4 +59,13 @@ Banniere cookies
 }
 .btn-deny{
     background-color: rgba(34, 34, 34,0);
+}
+
+.fade{
+    opacity: 0;
+    transition: 1s;
+}
+
+.hidden{
+    display: none;
 }
