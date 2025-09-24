@@ -4,7 +4,13 @@
  */
 
 // 1. Je recupere la section à partir de laquelle je veux faire apparaite la modale
-const section1 = document.querySelector(".one");
+const section3 = document.querySelector(".three");
+console.log(section3.offsetTop);
+
+
+
+
+
 
 // 2. Je recupere la modale
 const modal = document.querySelector(".modal");
@@ -16,7 +22,7 @@ window.addEventListener("scroll",onScrollDisplayModal);
 
 // 5. Je fais disparaite la modale au clique sur la croix
 modalQuit.addEventListener("click",function(){
-    // ...
+    modal.style.display = "none";
 
     window.removeEventListener("scroll",onScrollDisplayModal);
 });
@@ -26,6 +32,13 @@ modalQuit.addEventListener("click",function(){
  *  Obligatoire pour pouvoir utiliser removeEventListener(function)
  */
 function onScrollDisplayModal(){
-    console.log("Ouiiii je scroollll");
+    const topBorder = document.documentElement.scrollTop;
+    console.log(topBorder);
+    
+
+    if(topBorder > section3.offsetTop){
+        modal.style.display = "flex";
+
+    }
 
 }
