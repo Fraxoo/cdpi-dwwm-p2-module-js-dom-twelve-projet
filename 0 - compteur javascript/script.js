@@ -1,9 +1,8 @@
-const button_elem = document.querySelector("button");
-const nombre_elem = document.querySelector("p");
+const buttonClick_elem = document.querySelector("button");
+const p_elem = document.querySelector("p");
 
-let number = 0;
+let click = 0;
 
-button_elem.onclick = function() {
-    nombre_elem.innerText = number;
-    number++;
+buttonClick_elem.onclick = function(){
+    p_elem.innerText = `click ${click++}`;
 }
