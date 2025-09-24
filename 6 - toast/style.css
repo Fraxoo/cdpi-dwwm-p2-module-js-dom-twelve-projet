@@ -46,6 +46,10 @@ button:active{
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.186);
     transition: opacity 0.33s;
 }
+.fade{
+    opacity: 0;
+    transition: 1s;
+}
 .toast:hover{
     opacity: 0.33;
 }
