@@ -25,10 +25,50 @@ const message = document.getElementById("message");
 
 // 2. Lorsque le formulaire est soumit (clique du bouton submit ou touche ENTER)
 form.addEventListener("submit",function(event){
-    // 3. J'annule le comportement par défaut du formulaire  : qui consiste à envoyer une requete http GET à l'adresse de l'attribut action du formualire et donc recharger la page
     event.preventDefault();
-    // ..
+    const formData = new FormData(form);
+    if(formData.get("prenom").length < 2 || formData.get("prenom").length > 20){
+        const error = prenom.nextElementSibling;
+        error.classList.remove("invisible")
+    }
+    if(formData.get("nom").length < 2 || formData.get("nom").length > 20){
+        const error = nom.nextElementSibling;
+        error.classList.remove("invisible");
+    }
+    if(isValidEmail(formData.get("email"))){
+        const error = email.nextElementSibling;
+        error.classList.remove("invisible");
+    }
+    if(formData.get("message").length < 10 || formData.get("message").length > 100){
+        const error = message.nextElementSibling;
+        error.classList.remove("invisible");
+    }
+    
+    
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /**
  * HELPERS FUNCTIONS
