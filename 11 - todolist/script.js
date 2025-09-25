@@ -34,6 +34,12 @@ form.addEventListener("submit",function(event){
     logoButtonArch.classList.add("fa-check-circle");
     taskButtonArch.appendChild(logoButtonArch);
 
+    logoButtonArch.onclick = function(){
+        taskP.classList.toggle("done");
+    }
 
-
+    logoButtonDel.onclick = function(){
+        const parent = taskButtonDele.parentElement;
+        parent.remove();
+    }
 })
